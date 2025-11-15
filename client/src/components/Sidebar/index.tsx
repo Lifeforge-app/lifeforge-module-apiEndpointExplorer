@@ -8,13 +8,9 @@ import {
 } from 'lifeforge-ui'
 
 function Sidebar({
-  groupedEndpoints,
-  searchQuery,
-  setSearchQuery
+  groupedEndpoints
 }: {
   groupedEndpoints: Record<string, Route[]>
-  searchQuery: string
-  setSearchQuery: (query: string) => void
 }) {
   return (
     <SidebarWrapper>

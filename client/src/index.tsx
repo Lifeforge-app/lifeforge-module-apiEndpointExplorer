@@ -61,11 +61,7 @@ function APIEndpointExplorer() {
     <>
       <ModuleHeader />
       <LayoutWithSidebar>
-        <Sidebar
-          groupedEndpoints={groupedEndpoints}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
+        <Sidebar groupedEndpoints={groupedEndpoints} />
         <ContentWrapperWithSidebar>
           <header className="flex-between flex w-full">
             <div className="flex min-w-0 items-end">
@@ -99,41 +95,39 @@ function APIEndpointExplorer() {
                   {data.map(endpoint => (
                     <ItemWrapper
                       key={endpoint.path}
-                      className={'flex-between gap-6'}
+                      className="flex-between gap-6"
                     >
-                      <div className="flex-between gap-12">
-                        <div className="text-bg-500 flex items-center gap-3">
-                          <div
-                            className={clsx(
-                              'h-7 w-1 rounded-full',
-                              endpoint.method === 'GET'
-                                ? 'bg-blue-500'
-                                : 'bg-green-500'
-                            )}
-                          />
-                          <Icon
-                            className="text-bg-500 size-5"
-                            icon={
-                              endpoint.method === 'GET'
-                                ? 'tabler:search'
-                                : 'tabler:pencil'
-                            }
-                          />
-                          <code className="whitespace-nowrap">
-                            {endpoint.path.split('/').slice(0, -1).join('/')}
-                            <span className="text-custom-500">
-                              /{endpoint.path.split('/').slice(-1)}
-                            </span>
-                          </code>
-                        </div>
-                        <p className="text-bg-500 text-right text-base">
-                          {typeof endpoint.description === 'string'
-                            ? endpoint.description
-                            : endpoint.description[
-                                language as keyof typeof endpoint.description
-                              ] || ''}
-                        </p>
+                      <div className="text-bg-500 flex items-center gap-3">
+                        <div
+                          className={clsx(
+                            'h-7 w-1 rounded-full',
+                            endpoint.method === 'GET'
+                              ? 'bg-blue-500'
+                              : 'bg-green-500'
+                          )}
+                        />
+                        <Icon
+                          className="text-bg-500 size-5"
+                          icon={
+                            endpoint.method === 'GET'
+                              ? 'tabler:search'
+                              : 'tabler:pencil'
+                          }
+                        />
+                        <code className="whitespace-nowrap">
+                          {endpoint.path.split('/').slice(0, -1).join('/')}
+                          <span className="text-custom-500">
+                            /{endpoint.path.split('/').slice(-1)}
+                          </span>
+                        </code>
                       </div>
+                      <p className="text-bg-500 text-right text-base">
+                        {typeof endpoint.description === 'string'
+                          ? endpoint.description
+                          : endpoint.description[
+                              language as keyof typeof endpoint.description
+                            ] || ''}
+                      </p>
                       {/* <Icon
                         className="text-bg-400 dark:text-bg-600 mr-2 size-5"
                         icon="tabler:chevron-down"
