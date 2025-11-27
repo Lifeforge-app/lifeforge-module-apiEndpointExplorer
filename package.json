@@ -2,6 +2,9 @@
     "name": "api-endpoint-explorer",
     "version": "0.0.0",
     "description": "Explore all endpoints provided by modules in your LifeForge system.",
+    "scripts": {
+        "types": "cd client && bun tsc"
+    },
     "dependencies": {
         "@iconify/react": "^6.0.2",
         "@tanstack/react-query": "^5.90.11",
