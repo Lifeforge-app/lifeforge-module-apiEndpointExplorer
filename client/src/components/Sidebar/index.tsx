@@ -49,8 +49,10 @@ function Sidebar({
           <EmptyStateScreen
             smaller
             icon="tabler:search-off"
-            name="search"
-            namespace="apps.apiExplorer"
+            message={{
+              id: 'search',
+              namespace: 'apps.apiExplorer'
+            }}
           />
         )}
       </div>

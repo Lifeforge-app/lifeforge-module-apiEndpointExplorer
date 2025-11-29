@@ -3,8 +3,8 @@ import { useQuery } from '@tanstack/react-query'
 import clsx from 'clsx'
 import {
   Button,
+  Card,
   ContentWrapperWithSidebar,
-  ItemWrapper,
   LayoutWithSidebar,
   ModuleHeader,
   Scrollbar,
@@ -85,18 +85,15 @@ function APIEndpointExplorer() {
             className="my-6"
             namespace="apps.apiExplorer"
             searchTarget="endpoints"
-            setValue={setSearchQuery}
             value={searchQuery}
+            onChange={setSearchQuery}
           />
           <WithQuery query={endpointsQuery}>
             {data => (
               <Scrollbar>
                 <div className="space-y-3 pb-8">
                   {data.map(endpoint => (
-                    <ItemWrapper
-                      key={endpoint.path}
-                      className="flex-between gap-6"
-                    >
+                    <Card key={endpoint.path} className="flex-between gap-6">
                       <div className="text-bg-500 flex items-center gap-3">
                         <div
                           className={clsx(
@@ -132,7 +129,7 @@ function APIEndpointExplorer() {
                         className="text-bg-400 dark:text-bg-600 mr-2 size-5"
                         icon="tabler:chevron-down"
                       /> */}
-                    </ItemWrapper>
+                    </Card>
                   ))}
                 </div>
               </Scrollbar>
