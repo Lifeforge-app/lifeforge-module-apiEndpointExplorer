@@ -1,3 +1,4 @@
+import "./index.css"
 import { Icon } from '@iconify/react'
 import { useQuery } from '@tanstack/react-query'
 import clsx from 'clsx'
