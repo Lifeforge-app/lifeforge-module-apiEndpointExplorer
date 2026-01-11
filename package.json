@@ -7,7 +7,7 @@
   },
   "version": "0.0.2",
   "author": "Melvin Chia <melvinchia623600@gmail.com>",
-  "description": "Explore all endpoints provided by modules in your LifeForge system.",
+  "description": "Discover and test all API endpoints in your LifeForge system.",
   "scripts": {
     "types": "cd client && bun tsc",
     "build:client": "cd client && bun run vite build"
