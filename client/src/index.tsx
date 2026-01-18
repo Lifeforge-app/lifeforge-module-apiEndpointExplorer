@@ -1,4 +1,3 @@
-import "./index.css"
 import { Icon } from '@iconify/react'
 import { useQuery } from '@tanstack/react-query'
 import clsx from 'clsx'
@@ -14,17 +13,30 @@ import {
   useModuleSidebarState
 } from 'lifeforge-ui'
 import { useMemo, useState } from 'react'
-import { type InferOutput, usePersonalization } from 'shared'
+import { usePersonalization } from 'shared'
 
 import Sidebar from './components/Sidebar'
+import './index.css'
 import forgeAPI from './utils/forgeAPI'
 
-export type Route = InferOutput<typeof forgeAPI.listRoutes>[number]
+export type Route = {
+  method: string
+  path: string
+  description: string
+  schema: {
+    response: unknown
+    params?: unknown
+    body?: unknown
+    query?: unknown
+  }
+}
 
 function APIEndpointExplorer() {
   const { language } = usePersonalization()
 
-  const endpointsQuery = useQuery(forgeAPI.listRoutes.queryOptions())
+  const endpointsQuery = useQuery<Route[]>(
+    forgeAPI.untyped('/listRoutes').queryOptions()
+  )
 
   const { setIsSidebarOpen } = useModuleSidebarState()
 
