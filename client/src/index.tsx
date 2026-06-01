@@ -11,9 +11,9 @@ import {
   SearchInput,
   WithQuery,
   useModuleSidebarState
-} from 'lifeforge-ui'
+} from '@lifeforge/ui'
 import { useMemo, useState } from 'react'
-import { usePersonalization } from 'shared'
+import { usePersonalization } from '@lifeforge/shared'
 
 import Sidebar from './components/Sidebar'
 import './index.css'

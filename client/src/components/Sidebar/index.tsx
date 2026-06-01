@@ -1,11 +1,12 @@
 import type { Route } from '@'
 import { Icon } from '@iconify/react'
+
 import {
   EmptyStateScreen,
   SidebarDivider,
   SidebarTitle,
   SidebarWrapper
-} from 'lifeforge-ui'
+} from '@lifeforge/ui'
 
 function Sidebar({
   groupedEndpoints
