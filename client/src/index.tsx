@@ -1,7 +1,4 @@
-import { Icon } from '@iconify/react'
-import { useQuery } from '@tanstack/react-query'
-import clsx from 'clsx'
-import {
+import { Icon ,
   Button,
   Card,
   ContentWrapperWithSidebar,
@@ -11,9 +8,11 @@ import {
   SearchInput,
   WithQuery,
   useModuleSidebarState
-} from '@lifeforge/ui'
+, usePersonalization } from '@lifeforge/ui'
+import { useQuery } from '@tanstack/react-query'
+import clsx from 'clsx'
 import { useMemo, useState } from 'react'
-import { usePersonalization } from '@lifeforge/shared'
+
 
 import Sidebar from './components/Sidebar'
 import './index.css'
