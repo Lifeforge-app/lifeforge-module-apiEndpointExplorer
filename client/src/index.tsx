@@ -19,7 +19,6 @@ import {
 import { forgeAPI } from '@/manifest'
 
 import Sidebar from './components/Sidebar'
-import './index.css'
 
 export type Route = {
   method: string
