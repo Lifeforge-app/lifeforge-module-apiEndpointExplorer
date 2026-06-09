@@ -16,7 +16,7 @@ import { useMemo, useState } from 'react'
 
 import Sidebar from './components/Sidebar'
 import './index.css'
-import forgeAPI from './utils/forgeAPI'
+import { forgeAPI } from '@/manifest';
 
 export type Route = {
   method: string
