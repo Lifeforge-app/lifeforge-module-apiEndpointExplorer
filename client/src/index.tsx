@@ -1,22 +1,25 @@
-import { Icon ,
+import { useQuery } from '@tanstack/react-query'
+import clsx from 'clsx'
+import { useMemo, useState } from 'react'
+
+import {
   Button,
   Card,
   ContentWrapperWithSidebar,
+  Icon,
   LayoutWithSidebar,
   ModuleHeader,
   Scrollbar,
   SearchInput,
   WithQuery,
-  useModuleSidebarState
-, usePersonalization } from '@lifeforge/ui'
-import { useQuery } from '@tanstack/react-query'
-import clsx from 'clsx'
-import { useMemo, useState } from 'react'
+  useModuleSidebarState,
+  usePersonalization
+} from '@lifeforge/ui'
 
+import { forgeAPI } from '@/manifest'
 
 import Sidebar from './components/Sidebar'
 import './index.css'
-import { forgeAPI } from '@/manifest';
 
 export type Route = {
   method: string
