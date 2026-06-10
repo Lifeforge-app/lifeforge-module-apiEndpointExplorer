@@ -51,8 +51,7 @@ function Sidebar({
             smaller
             icon="tabler:search-off"
             message={{
-              id: 'search',
-              namespace: 'apps.apiExplorer'
+              id: 'search'
             }}
           />
         )}

@@ -96,7 +96,6 @@ function APIEndpointExplorer() {
           </header>
           <SearchInput
             className="my-6"
-            namespace="apps.apiExplorer"
             searchTarget="endpoints"
             value={searchQuery}
             onChange={setSearchQuery}
