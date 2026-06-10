@@ -40,7 +40,6 @@ function APIEndpointExplorer() {
   )
 
   const { setIsSidebarOpen } = useModuleSidebarState()
-
   const [searchQuery, setSearchQuery] = useState('')
 
   const groupedEndpoints = useMemo(() => {
